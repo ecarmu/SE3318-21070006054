@@ -1,0 +1,37 @@
+<module name="Checker">
+    <!--
+      Comments: Enforce Javadoc on public classes and methods, naming conventions, indentation, and no magic numbers.
+      Based on theory lesson slides: Javadoc, Naming, Indentation, MagicNumber, LineLength, and others.
+    -->
+    <property name="severity" value="warning"/>
+    <module name="TreeWalker">
+        <module name="JavadocMethod">
+            <property name="scope" value="public"/>
+            <property name="allowMissingParamTags" value="false"/>
+            <property name="allowMissingThrowsTags" value="false"/>
+        </module>
+        <module name="JavadocType">
+            <property name="scope" value="public"/>
+        </module>
+        <module name="JavadocVariable">
+            <property name="scope" value="public"/>
+        </module>
+        <module name="MagicNumber">
+            <property name="ignoreNumbers" value="0,1,-1"/>
+        </module>
+        <module name="LineLength">
+            <property name="max" value="120"/>
+        </module>
+        <module name="MethodLength">
+            <property name="max" value="150"/>
+        </module>
+        <module name="ParameterName"/>
+        <module name="LocalVariableName"/>
+        <module name="MemberName"/>
+        <module name="TypeName"/>
+        <module name="Indentation">
+            <property name="basicOffset" value="4"/>
+            <property name="tabWidth" value="4"/>
+        </module>
+    </module>
+</module>
